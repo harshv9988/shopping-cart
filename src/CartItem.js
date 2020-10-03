@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartItem.css'
 
 class CartItem extends React.Component{
     constructor(){
@@ -15,7 +16,7 @@ class CartItem extends React.Component{
         return(
             <div className="cart-item">
                 <div className="left-block">
-                    <img style={styles.image} />
+                    <img  />
                 </div>
                 <div className="right-block">
                     <div style={{fontSize:25}}>{title}</div>
@@ -33,13 +34,13 @@ class CartItem extends React.Component{
     }
 }
 
-const styles = {
-    image : {
-        height:'100%',
-        width:110,
-        borderRadius:4,
-        backgroundColor:'#777'
-    }
-}
+// const styles = {
+//     image : {
+//         height:'100%',
+//         width:110,
+//         borderRadius:4,
+//         backgroundColor:'#777'
+//     }
+// }
 
 export default CartItem;
