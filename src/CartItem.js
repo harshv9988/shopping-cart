@@ -2,15 +2,6 @@ import React from 'react';
 import './CartItem.css'
 
 class CartItem extends React.Component{
-    constructor(){
-        super();
-       this.state = {
-        title : 'Phone',
-        price : '999',
-        qty : 1,
-        img:''
-       }
-    }
 
      increaseQuantity = () => {
         //method 1
@@ -48,7 +39,7 @@ class CartItem extends React.Component{
         })
     }
     render(){
-        const {title,price,qty} = this.state;
+        const {title,price,qty} = this.props.product;
         return(
             <div className="cart-item">
                 <div className="left-block">
@@ -61,12 +52,12 @@ class CartItem extends React.Component{
                     <div className="cart-item-actions">
                         {/* buttons */}
                         <img alt="increase" 
-                        onClick = {this.increaseQuantity}
+                        onClick = {() => this.props.onClickIncreaseQty(this.props.product)}
                         className="action-icons" 
                         src="https://www.flaticon.com/svg/static/icons/svg/709/709484.svg"/>
 
                         <img alt="decrease" 
-                        onClick = {this.decreaseQuantity}
+                        onClick = {() => this.props.onClickDecreaseQty(this.props.product)}
                         className="action-icons" 
                         src="https://www.flaticon.com/svg/static/icons/svg/992/992683.svg"/>
 
