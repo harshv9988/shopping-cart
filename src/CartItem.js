@@ -1,46 +1,10 @@
 import React from 'react';
 import './CartItem.css'
 
-class CartItem extends React.Component{
+const CartItem = (props) => {
 
-     increaseQuantity = () => {
-        //method 1
-        // this.setState({
-        //     qty : this.state.qty + 1
-        // });
-
-        //method 2
-        this.setState((prevState) => {
-            return {
-                qty : prevState.qty + 1
-            }
-        }, () => {  // callback function to print qty as setState is asynchronous
-            console.log('this.state',this.state);
-        })
-    }
-
-    decreaseQuantity = () =>{
-
-        // const qty = this.state.qty;
-        // if(qty===0){
-        //     return;
-        // }
-        // or
-
-        const {qty} = this.state;
-        if(qty===0){
-            return;
-        }
-
-        this.setState((prevState) => {
-            return {
-                qty : prevState.qty - 1
-            }
-        })
-    }
-    render(){
-        const {title,price,qty} = this.props.product;
-        const {product, onClickIncreaseQty, onClickDecreaseQty, onClickDelete} = this.props;
+        const {title,price,qty} = props.product;
+        const {product, onClickIncreaseQty, onClickDecreaseQty, onClickDelete} = props;
         return(
             <div className="cart-item">
                 <div className="left-block">
@@ -70,7 +34,6 @@ class CartItem extends React.Component{
                 </div>
             </div>
         );
-    }
 }
 
 // const styles = {
