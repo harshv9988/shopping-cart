@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from './Cart';
 import Navbar from './Navbar';
-import CartItem from './CartItem';
+// import CartItem from './CartItem';
 
 class App extends React.Component {
 
